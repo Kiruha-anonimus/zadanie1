@@ -3,27 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Отчет по заданию</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            font-size: 18px; /* Увеличен основной текст */
+        }
+        h1 {
+            text-align: center; /* Заголовок по центру */
+            background: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 26px;
+            color: #000000;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 22px;
+            color: #000000;
+        }
+        p {
+            font-size: 18px; /* Увеличен текст в параграфах */
+            line-height: 1.5;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        strong {
+            color: #000000;
+            font-size: 19px;
+        }
+        img {
+            max-width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .center-name {
+            text-align: center;
+            font-size: 22px;
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Отчет по заданию</h1>
-    <p><strong>Выполнил: </strong>Кирилл Копылов 22/1</p>
-    <img src="s1.png" alt="Скриншот ping" width="600">
+    
+    <div class="center-name">
+        <p><strong>Выполнил:</strong> Кирилл Копылов 22/1</p>
+    </div>
 
     <h2>1. Ping kubsu.ru</h2>
-    <img src="s2.png" alt="Скриншот ping" width="600">
-    <img src="s3.png" alt="Скриншот ping" width="600">
+    <p><strong>Ping kubsu.ru:</strong> Ввел команду ping kubsu.ru. В выводе видно, что IP-адрес сервера kubsu.ru - 212.192.134.20 (в скобках). Пинг успешный, время ответа около 0.6-0.7 мс.</p>
+    <img src="s1.png" alt="Скриншот ping" width="600">
 
-    <h2>2. A и MX записи</h2>
-    <h3>kubsu.ru (A)</h3>
-    <img src="s4.png" alt="nslookup A kubsu.ru" width="600">
-    <h3>kubsu.ru (MX)</h3>
-    <img src="s5.png" alt="nslookup MX kubsu.ru" width="600">
-    <!-- Добавь остальные скриншоты по аналогии -->
+    <h2>2. A и MX записи kubsu.ru</h2>
+    <p><strong>nslookup A-запись kubsu.ru:</strong> Ввел команду nslookup kubsu.ru. Команда показала A-запись (IPv4-адрес) домена kubsu.ru: 212.192.134.20. Это тот же адрес, что и при пинге.</p>
+    <img src="s2.png" alt="Скриншот nslookup A" width="600">
+    
+    <p><strong>nslookup MX-запись kubsu.ru:</strong> Ввел команду nslookup -type=MX kubsu.ru. В выводе видно MX-записи: почтовый сервер mx.yandex.ru с приоритетом 10.</p>
+    <img src="s3.png" alt="Скриншот nslookup MX" width="600">
 
-    <h2>3. Whois информация</h2>
-    <img src="s6.png" alt="whois kubsu.ru" width="600">
+    <h2>3. A и MX записи kubsu-dev.ru</h2>
+    <p><strong>nslookup kubsu-dev.ru:</strong> Ввел команды nslookup kubsu-dev.ru и nslookup -type=MX kubsu-dev.ru. A-запись: 212.192.134.20, MX-запись: mail.kubsu-dev.ru с приоритетом 10.</p>
+    <img src="s4.png" alt="nslookup kubsu-dev.ru" width="600">
 
-    <h2>4. SFTP сессия</h2>
+    <h2>4. Whois информация</h2>
+    <p><strong>whois kubsu.ru:</strong> Ввел команду whois kubsu.ru. В выводе нашел дату регистрации домена: created: 2002-07-22. Домену больше 20 лет.</p>
+    <img src="s5.png" alt="whois kubsu.ru" width="600">
+    
+    <p><strong>whois kubsu-dev.ru:</strong> Ввел команду whois kubsu-dev.ru. Дата регистрации домена: created: 2012-11-14. Домен создан для учебных целей.</p>
+    <img src="s6.png" alt="whois kubsu-dev.ru" width="600">
+
+    <h2>5. SFTP сессия</h2>
+    <p><strong>SFTP сессия:</strong> Подключился по SFTP: sftp kiruha-anonimus@kubsu-dev.ru. Выполнил get -r * для скачивания всех файлов из папки lab1 на локальный компьютер. На скриншоте виден процесс успешной передачи.</p>
     <img src="s7.png" alt="Скриншот SFTP" width="600">
 
 </body>
